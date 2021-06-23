@@ -9,21 +9,51 @@ const restaurant = {
   location: "Angelo, Tavanti 23,Frienze,Italy",
   categories: ["Italian", "Pizzeria", "Vegetarian", "Organic"],
   starterMenu: ["Focacciq", "Bruchetta", "Garlic bread"],
+  mainnMenu: ["pizza", "Pasta", "Pisotto"],
 
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0,
+      close: 24,
+    },
+  },
   order: function (catIndex, startIndex) {
     return [this.categories[catIndex], this.starterMenu[startIndex]];
   },
 };
 
-const [first, second] = restaurant.categories;
-console.log(first, second);
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
 
-console.log(restaurant.categories[0]);
+const {
+  location: location,
+  starterMenu: menu,
+  openingHours: hours,
+} = restaurant;
 
-const [cat, start] = restaurant.order(2, 1);
-console.log(cat, start);
+//console.log(location, menu, hours);
 
-const num = [1, 2, 3];
+const {
+  fri: { open },
+} = openingHours;
+console.log(fri);
+// const [first, second] = restaurant.categories;
+// console.log(first, second);
 
-const [a, b, c, d = 0] = num;
-console.log(a, b, c, d);
+// console.log(restaurant.categories[0]);
+
+// const [cat, start] = restaurant.order(2, 1);
+// console.log(cat, start);
+
+// const num = [1, 2, 3];
+
+// const [a, b, c, d = 0] = num;
+// console.log(a, b, c, d);
